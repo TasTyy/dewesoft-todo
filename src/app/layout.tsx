@@ -28,7 +28,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
                 <Providers>
-                    <Navbar defaultIndex={0} />
+                    <Navbar />
                     {children}
                 </Providers>
             </body>
