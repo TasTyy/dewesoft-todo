@@ -18,7 +18,3 @@ export const toggleTodoSchema = z.object({
 export const deleteTodoSchema = z.object({
     id: z.number(),
 });
-
-export const searchTodoSchema = z.object({
-    query: z.string().min(1),
-});

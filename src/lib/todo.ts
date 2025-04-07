@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { createTodoSchema, toggleTodoSchema, deleteTodoSchema, searchTodoSchema } from "@/app/api/Schemas";
+import { createTodoSchema, toggleTodoSchema, deleteTodoSchema } from "@/app/api/Schemas";
 
 export async function getTodos() {
     return await prisma.todo.findMany({
@@ -44,21 +44,4 @@ export async function deleteTodo(formData: FormData) {
     }
     await prisma.todo.delete({ where: { id: parsed.data.id } });
     revalidatePath("/todos");
-}
-
-export async function searchTodos(query: string) {
-    const parsed = searchTodoSchema.safeParse({ query });
-    if (!parsed.success) {
-        console.error(parsed.error.flatten());
-        return [];
-    }
-    return await prisma.todo.findMany({
-        where: {
-            title: {
-                contains: parsed.data.query,
-                mode: "insensitive",
-            },
-        },
-        orderBy: { createdAt: "desc" },
-    });
 }
