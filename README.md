@@ -2,7 +2,7 @@
 
 This is a modern full-stack web application for managing tasks. Built using **Next.js 14** and **Chakra UI**, it allows users to create, toggle, and delete todos with persistent storage. The app is styled for both light and dark mode and fully responsive across devices.
 
-**Link to deployed site:** [dewesoft-todo](https://dewesoft-todo-j4gyeedpi-majs-projects-c18becb5.vercel.app/todos)
+**Link to deployed site:** [dewesoft-todo](https://dewesoft-todo-j4gyeedpi-majs-projects-c18becb5.vercel.app)
 
 ---
 
