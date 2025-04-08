@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dewesoft Assignment – To-Do App
 
-## Getting Started
+This is a modern full-stack web application for managing tasks. Built using **Next.js 14** and **Chakra UI**, it allows users to create, toggle, and delete todos with persistent storage. The app is styled for both light and dark mode and fully responsive across devices.
 
-First, run the development server:
+**Link to deployed site:** [dewesoft-todo](https://dewesoft-todo-j4gyeedpi-majs-projects-c18becb5.vercel.app/todos)
+
+---
+
+## 🔧 Features
+
+-   Create a new todo
+-   Toggle completion status
+-   Delete an existing todo
+-   Dark/light mode toggle
+-   Persistent database (PostgreSQL + Prisma)
+-   Deployed with Vercel
+
+---
+
+## 🧱 Tech Stack
+
+-   **Next.js 14**
+-   **Chakra UI** (Styling & components)
+-   **Prisma** (ORM for database access)
+-   **PostgreSQL** (via Neon.tech)
+-   **TypeScript**
+-   **Vercel** (Deployment)
+
+---
+
+## 📁 Project Structure
+
+```
+📂 src
+ ├── 📂 app
+ │    ├── layout.tsx             # Root layout
+ │    ├── page.tsx               # Home page
+ │    ├── providers.tsx          # Chakra provider setup
+ │    ├── globals.css            # Global styles
+ │    ├── 📂 todos/
+ │    │    ├── page.tsx          # Main To-Do page
+ │    │    ├── error.tsx         # Error boundary for /todos
+ │    │    ├── loading.tsx       # Loading spinner for /todos
+ │    ├── 📂 api/
+ │    │    ├── Interfaces.ts     # TypeScript interfaces
+ │    │    ├── Schemas.ts        # Zod schemas for validation
+ ├── 📂 components
+ │    ├── Navbar.tsx             # Navigation bar
+ │    ├── TodoInput.tsx          # Input field for new todos
+ │    ├── TodoItem.tsx           # Display + actions for each todo
+ ├── 📂 lib
+ │    ├── prisma.ts              # Prisma client
+ │    ├── todo.ts                # Server actions and DB logic
+ ├── 📂 theme
+ │    ├── theme.ts               # Custom Chakra theme
+ ├── .env                        # Environment variables
+```
+
+---
+
+## 🚀 Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/TasTyy/dewesoft-todo.git
+cd dewesoft-todo
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file:
+
+```env
+DATABASE_URL="postgresql://neondb_owner:npg_oqwAZF09WGbL@ep-rough-glitter-a2o7wtfx-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+```
+
+Push Prisma schema to the DB:
+
+```bash
+npx prisma db push
+```
+
+Generate the Prisma Client:
+
+```bash
+npx prisma generate
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be available at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 Usage
 
-To learn more about Next.js, take a look at the following resources:
+-   Type a task and click "Add" to create a new todo
+-   Check/uncheck the checkbox to toggle its completion
+-   Click the red trash icon to delete a task
+-   Toggle dark/light theme via the icon in the navbar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Future Improvements
 
-## Deploy on Vercel
+-   Add search functionality (filter todos)
+-   Confirm deletion with modal
+-   Support for editing existing todos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+This project is licensed under the Dewesoft Assignment Terms.
+
+**Author:** Maj Koren  
+**GitHub:** [@TasTyy](https://github.com/TasTyy)
